@@ -1,0 +1,24 @@
+{
+  "things": [
+    {
+      "name": "new Thing 2",
+      "attributes": [
+        "attribute1",
+        "attribute2"
+      ],
+      "id": "a4e1002d-31b7-46a1-b7a9-c2015c927a9a",
+      "createdAt": "2024-05-12T15:56:57.830Z",
+      "updatedAt": "2024-05-12T15:56:57.830Z"
+    },
+    {
+      "name": "new Thing 1",
+      "attributes": [
+        "attribute1",
+        "attribute2"
+      ],
+      "id": "9d495962-8d8b-49b6-83e2-e04ad038ff0e",
+      "createdAt": "2024-05-15T18:58:03.511Z",
+      "updatedAt": "2024-05-15T18:58:03.511Z"
+    }
+  ]
+}
