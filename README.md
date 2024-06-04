@@ -88,3 +88,43 @@ Il s'agit d'une bonne pratique pour permettre l'imbrication logique des URL. L'U
 
 ## Bonne pratique numéro 8
 >Intégrer le filtrage, le tri et la pagination
+
+L'intégration de filtrage de tri et de pagination est une étape importante dans l'amélioration d'une API REST
+
+Le filtrage et la pagination sont importants pour permettre à nos requêtes de rester rapides et d'éviter de faire tomber nos systèmes (requête de 1M things).
+
+La pagination est un mécanisme permettant de diviser l'ensemble de notre collection de Thing en plusieurs "pages" où chaque page contient un nombre limité de Things.
+
+Le tri peut être une tâche complexe, il est donc efficace de le faire dans notre API pour ne pas que le Client le fasse.
+
+Nous ajoutons les critères de filtre en tant que **paramamètre de requête**.
+Nous allons utiliser l'attribut `color` pour simuler le filtre.
+req.query contient les requêtes après le `?` dans l'URL (Exemple: `/thing?color=red`)
+
+## Bonne pratique numéro 9
+>Utiliser le `data caching` pour améliorer les performances
+
+Le cache agit comme une couche d'accès adjacente aux données pour votre base de données que vos applications peuvent utiliser pour accroître leurs performances.
+
+Pour les ressources fréquemment utilisées il fait sens de les stocker dans le cache et les resservir via le cache plutôt que de faire une requête à la base de données. Il faut cependant faire attention à ce que ces données **soient le plus à jour possible**.
+
+Il existe plusieurs solutions pour implémenter le caching comme `redis` ou le middleware express `apicache`. Nous allons utiliser apicache pour l'exemple.
+
+Après avoir cacher les requêtes les plus utilisées comme les requêtes `GET`, on gagne largement en performances pour aller chercher de la donnée identique. Il faut toujours garder cela à l'esprit lors de l'utilisation de notre api que la donnée ne peut etre plus à jour !
+
+Il n'est pas nécessaire de **toujours** avoir un cache. On peut commencer sans et l'implémenter si le besoin se présente.
+
+## Bonne pratique numéro 10
+>La Sécurité !
+Evidemment pour une API la sécurité est une un facteur clé.
+- Utilisation de SLL/TLS car c'est le standard de la communication sur internet à nos jours et c'est très important pour une API qui envoie de la donnée privée
+- Si nous avons des ressources uniquement accessible pour des utilisateurs authentifié il faudra alors les proteger. Dans express nous pouvons par exemple implémenter une vérification dans un middleware dans nos routes avant d'accéder aux controllers.
+- Il pourrait aussi y avoir des actions ou des ressources accessible uniquement pour certains rôles d'utilisateurs comme des `admins` qui peuvent créer, mettre à jour ou supprimer de la donnée. Cela peut aussi être fait avec un middleware de rôle en supplément de l'authentification.
+
+Voici des ressources pour creuser un peu plus la sécurité dans une API REST.
+>https://restfulapi.net/security-essentials/
+
+## Bonne pratique numéro 11
+>Documenter clairement son API
+
+>"_An API is just as good as it's documentation_"

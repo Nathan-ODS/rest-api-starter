@@ -1,9 +1,9 @@
 import { v4 as uuid } from "uuid";
 import Thing from "../database/Thing.js";
 
-const getAllThings = () => {
+const getAllThings = (filterParams) => {
   try {
-    return Thing.getAllThings();
+    return Thing.getAllThings(filterParams);
   } catch (error) {
     throw error; 
   }

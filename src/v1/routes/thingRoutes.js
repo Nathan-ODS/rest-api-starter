@@ -1,11 +1,14 @@
 import express from 'express';
+import apicache from "apicache";
+
 import thingController from '../../controllers/thingController.js';
 
 const router = express.Router();
+const cache = apicache.middleware;
 
-router.get('/', thingController.getAllThings);
+router.get('/', cache('2 minutes'), thingController.getAllThings);
 
-router.get('/:thingId', thingController.getOneThing);
+router.get('/:thingId', cache('2 minutes'), thingController.getOneThing);
 
 router.post('/', thingController.createNewThing);
 

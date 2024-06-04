@@ -1,6 +1,5 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-
 import v1ThingsRouter from './v1/routes/thingRoutes.js';
 
 const app = express();
@@ -18,4 +17,3 @@ app.use('/api/v1/things', v1ThingsRouter);
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
-

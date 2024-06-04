@@ -1,8 +1,9 @@
 import thingService from "../services/thingService.js";
 
 const getAllThings = (req, res) => {
+  const { color } = req.query;
   try {
-    const allThings = thingService.getAllThings();
+    const allThings = thingService.getAllThings({ color });
     res.status(200).send({ status: "OK", data: allThings });
   } catch (error) {
     res

@@ -3,9 +3,17 @@ import { saveToDatabase } from "./utils.js";
 
 const DB = JSON.parse(fs.readFileSync("./src/database/db.json", "utf-8"));
 
-const getAllThings = () => {
+const getAllThings = (filterParams) => {
   try {
-    return DB.things;
+    let things = DB.things;
+
+    if (filterParams.color) {
+      return DB.things.filter((thing) => 
+        thing.color.toLowerCase().includes(filterParams.color)
+      );
+    }
+
+    return things;
   } catch (error) {
     throw { status: 500, message: error };
   }

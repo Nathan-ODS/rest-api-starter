@@ -2,6 +2,7 @@
   "things": [
     {
       "name": "new Thing 2",
+      "color": "red", 
       "attributes": [
         "attribute1",
         "attribute2"
@@ -12,6 +13,7 @@
     },
     {
       "name": "new Thing 1",
+      "color": "blue",
       "attributes": [
         "attribute1",
         "attribute2"
