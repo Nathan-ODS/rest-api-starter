@@ -128,3 +128,6 @@ Voici des ressources pour creuser un peu plus la sécurité dans une API REST.
 >Documenter clairement son API
 
 >"_An API is just as good as it's documentation_"
+
+Ce n'est pas simplement pour faire joli. Une bonne documentation rend aussi la vied es développeurs plus facile. La documentation est la page de couverture d'une API, alors plus tôt elle est comprise plus tôt d'autres personnes voudront l'utiliser. Voici une documentation [OpenAPI Specification](https://swagger.io/specification/). Des paquets comme [swagger-ui-express](https://www.npmjs.com/package/swagger-ui-express) et [swagger-jsdoc](https://www.npmjs.com/package/swagger-jsdoc) peuvent nous aider générer de la documentation rapidement. _Aller voir `swagger.js`_ .
+Nous ajoutons l'url de la documentation swagger dans notre `listen()` de notre  `index.js`. Lorsque le server node se lance nous pourrons aller vois la doc de notre API qui s'update de façon dynamique avec les JsDocs dans nos fichiers. J'ai ajouté des exemples dans l'endpoint GET et le schema de notre modele Thing.

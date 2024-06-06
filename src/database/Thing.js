@@ -1,6 +1,37 @@
 import fs from "fs";
 import { saveToDatabase } from "./utils.js";
 
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     Thing:
+ *       type: object
+ *       properties:
+ *         id: 
+ *           type: string
+ *           example: "a4e1002d-31b7-46a1-b7a9-c2015c927a9a"
+ *         name: 
+ *           type: string
+ *           example: "new Thing 2"
+ *         color:
+ *           type: string
+ *           example: "red"
+ *         attributes:
+ *           type: array
+ *           items:
+ *             type: string
+ *           example: ["attribute1", "attribute2"]
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *           example: "2024-05-12T15:56:57.830Z"
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           example: "2024-05-12T15:56:57.830Z"
+ */
+
 const DB = JSON.parse(fs.readFileSync("./src/database/db.json", "utf-8"));
 
 const getAllThings = (filterParams) => {
