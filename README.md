@@ -2,7 +2,7 @@
 Ceci est un projet simple pour comprendre et définir les bonnes pratiques pour une API REST.
 
 ### Définition
-Une API REST est une API qui suit une structure donnée. Cela ne signifit donc pas qu'elle suit des normes ou des règles précises. Je vais utiliser [cet article](https://www.freecodecamp.org/news/rest-api-design-best-practices-build-a-rest-api/#rest-api-best-practices) pour essayer de lister les principaux points d'une API REST suivant de bonnes pratiques en détaillant le plus possible.
+Une API REST est une API qui suit une structure donnée. Cela ne signifit donc pas qu'elle suit des normes ou des règles précises. J'ai utilisé [cet article](https://www.freecodecamp.org/news/rest-api-design-best-practices-build-a-rest-api/#rest-api-best-practices) pour essayer de lister les principaux points d'une API REST suivant de bonnes pratiques. L'implémentation faite ici reste très proche de la solution présentée dans l'article.
 
 ### Gestion des versions
 Avant de coder notre code principal pour notre API il faut déjà penser à la gestion des versions. C'est un avantage car on sait que l'on va déployer une version de notre API et travailler sur de nouvelles features que les clients ne doivent pas avoir accès. S'il y a des breaking changes dans nos projets en développements cela ne doit pas impacter le client.
