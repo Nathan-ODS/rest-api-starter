@@ -15,3 +15,5 @@ app.listen(PORT, () => {
 
     V1SwaggerDocs(app, PORT);
 });
+
+export default app;
