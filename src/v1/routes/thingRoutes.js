@@ -4,7 +4,7 @@ import apicache from "apicache";
 import thingController from '../../controllers/thingController.js';
 
 const router = express.Router();
-const cache = apicache.middleware;
+const cache = process.env.NODE_ENV === 'test' ? (req, res, next) => next() : apicache.middleware('2 minutes');
 
 /**
  * @openapi
@@ -28,9 +28,9 @@ const cache = apicache.middleware;
  *                   items: 
  *                     type: object
  */
-router.get('/', cache('2 minutes'), thingController.getAllThings);
+router.get('/', cache, thingController.getAllThings);
 
-router.get('/:thingId', cache('2 minutes'), thingController.getOneThing);
+router.get('/:thingId', cache, thingController.getOneThing);
 
 router.post('/', thingController.createNewThing);
 
