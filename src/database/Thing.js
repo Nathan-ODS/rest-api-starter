@@ -35,7 +35,6 @@ import { saveToDatabase } from "./utils.js";
 const DB = JSON.parse(fs.readFileSync("./src/database/db.json", "utf-8"));
 
 export const getAllThings = (filterParams) => {
-  console.error('COUCOU JE SUIS PAS LE MOCK')
   try {
     let things = DB.things;
 
